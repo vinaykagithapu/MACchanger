@@ -2,6 +2,7 @@
 ## Author : github.com/vinaykagithapu
 ## Blog   : https://vinaytechsol.blogspot.com
 ### Don't copy this code without give me the credits, nerd! 
+### This python script work for only Linux Operating Systems.
 ### This python script uses the python interpreter download from (https://www.python.org/downloads/)
 
 
@@ -26,5 +27,5 @@ git clone https://github.com/vinaykagithapu/MACchanger.git
 cd MACchanger
 sudo apt-get install python
 python mac_changer.py --help
-python mac_changer.py -i INTERFACE_NAME -m NEW_MAC_ADDRESS
+sudo python mac_changer.py -i INTERFACE_NAME -m NEW_MAC_ADDRESS
 ```
