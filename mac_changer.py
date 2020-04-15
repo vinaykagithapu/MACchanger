@@ -8,7 +8,7 @@ def get_arguments():
     parser.add_option("-m", "--mac", dest="new_mac", help="New MAC address.")
     (options, arguments) = parser.parse_args()
     if not options.interface:
-        parser.error("[-] Please specify the Interface, Use --help for more info.")
+        parser.error("[-] Please specify the Valid Interface, Use --help for more info.")
     elif not options.new_mac:
         parser.error("[-] Please specify the MAC address, Use --help for more info.")
     return options
@@ -32,10 +32,14 @@ current_mac = get_current_mac(options.interface)
 print("Current MAC = " + str(current_mac))
 if current_mac == None:
     print("[-] The Interface '" +options.interface+ "' does not have MAC address.")
+    print("[-] Error: Invalid Interface to Change MAC address.")
 else:
     change_mac(options.interface, options.new_mac)
     current_mac = get_current_mac(options.interface)
     if current_mac == options.new_mac:
         print("[+] MAC address of " +options.interface+ " was successfully changed to " +current_mac)
+        print("[+] New MAC\t: "+str(current_mac))
+
     else:
         print("[-] MAC address of " +options.interface+ " did not changed.")
+        print("[-] Error: Invalid MAC Address")
