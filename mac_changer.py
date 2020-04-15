@@ -31,8 +31,8 @@ options = get_arguments()
 current_mac = get_current_mac(options.interface)
 print("Current MAC = " + str(current_mac))
 if current_mac == None:
-    print("[-] The Interface '" +options.interface+ "' does not have MAC address.")
-    print("[-] Error: Invalid Interface to Change MAC address.")
+    print("\n[-] The Interface '" +options.interface+ "' does not have MAC address.")
+    print("\n[-] Error: Invalid Interface to Change MAC address.")
 else:
     change_mac(options.interface, options.new_mac)
     current_mac = get_current_mac(options.interface)
